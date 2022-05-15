@@ -139,28 +139,37 @@ public class MainActivity extends AppCompatActivity {
         button_plus.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                value1 = displayed_Text.getText().toString();
-                calculation1 = Integer.valueOf(value1);
-                displayed_Text.setText(plus);
+                value1 = displayed_Text.getText().toString(); //Assigning String value of displayed Text to value1
+                calculation1 = Integer.valueOf(value1);//Assigning Integer Value of value1 to calculation1
+                displayed_Text.setText(plus); //setting displayed Text to symbol "+"
 
 
             }
         });
         button_minus.setOnClickListener(new OnClickListener() {
             @Override
-            public void onClick(View view) { displayed_Text.append(minus);
+            public void onClick(View view) {
+                value1 = displayed_Text.getText().toString(); //Assigning String value of displayed Text to value1
+                calculation1 = Integer.valueOf(value1);//Assigning Integer Value of value1 to calculation1
+                displayed_Text.setText(minus);//setting displayed Text to symbol "-"
 
             }
         });
         button_times.setOnClickListener(new OnClickListener() {
             @Override
-            public void onClick(View view) { displayed_Text.append(times);
+            public void onClick(View view) {
+                value1 = displayed_Text.getText().toString(); //Assigning String value of displayed Text to value1
+                calculation1 = Integer.valueOf(value1);//Assigning Integer Value of value1 to calculation1
+                displayed_Text.setText(times);//setting displayed Text to symbol "x"
 
             }
         });
         button_divide.setOnClickListener(new OnClickListener() {
             @Override
-            public void onClick(View view) {displayed_Text.append(divide);
+            public void onClick(View view) {
+                value1 = displayed_Text.getText().toString(); //Assigning String value of displayed Text to value1
+                calculation1 = Integer.valueOf(value1);//Assigning Integer Value of value1 to calculation1
+                displayed_Text.setText(divide);//setting displayed Text to symbol "/"
 
             }
         });
@@ -177,19 +186,52 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        button_equal_to.setOnClickListener(new OnClickListener() {
+        button_equal_to.setOnClickListener(new OnClickListener() { //When equal to is press do:
             @Override
             public void onClick(View view) {
-                if(displayed_Text.getText().toString().contains("+")){
-                    value2 = displayed_Text.getText().toString().replace("+","");
-                    calculation2 = Integer.valueOf(value2);
-                    equal_to = calculation1 + calculation2;
-                    displayed_Text.setText(Integer.toString(equal_to));
+                if(displayed_Text.getText().toString().contains("+")){ //checking if "+" is pressed
+                    value2 = displayed_Text.getText().toString().replace("+",""); // Assign value2 to String value of next series of numbers and removing "+"
+                    calculation2 = Integer.valueOf(value2); // assigning calculation2 to Integer Value of value2
+                    equal_to = calculation1 + calculation2; //Mathematical calculation of Sum
 
                 }
+                if(displayed_Text.getText().toString().contains("-")){ //checking if "-" is pressed
+                    value2 = displayed_Text.getText().toString().replace("-",""); // Assign value2 to String value of next series of numbers and removing "+"
+                    calculation2 = Integer.valueOf(value2); // assigning calculation2 to Integer Value of value2
+                    equal_to = calculation1 - calculation2; //Mathematical calculation of Difference
+
+                }
+
+                if(displayed_Text.getText().toString().contains("/")){ //checking if "+" is pressed
+                    value2 = displayed_Text.getText().toString().replace("/",""); // Assign value2 to String value of next series of numbers and removing "+"
+                    calculation2 = Integer.valueOf(value2); // assigning calculation2 to Integer Value of value2
+                    equal_to = calculation1 / calculation2; //Mathematical calculation of Division
+
+                }
+                if(displayed_Text.getText().toString().contains("x")){ //checking if "x" is pressed
+                    value2 = displayed_Text.getText().toString().replace("x",""); // Assign value2 to String value of next series of numbers and removing "+"
+                    calculation2 = Integer.valueOf(value2); // assigning calculation2 to Integer Value of value2
+                    equal_to = calculation1 * calculation2; //Mathematical calculation of Multiplication
+
+                }
+
+                displayed_Text.setText(Integer.toString(equal_to));//setting Displayed Text to String Value of equal_to
 
             }
         });
 
+        button_plus.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                value1 = displayed_Text.getText().toString(); //Assigning String value of displayed Text to value1
+                calculation1 = Integer.valueOf(value1);//Assigning Integer Value of value1 to calculation1
+                displayed_Text.setText(plus); //setting displayed Text to symbol "+"
+
+
+            }
+        });
     }
 }
+
+
+
